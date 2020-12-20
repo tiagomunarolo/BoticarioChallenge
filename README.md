@@ -6,7 +6,7 @@ Desafio Boticario
 - It is a project, using Python as backend, Flask as web-service and Mongo as database.
 - User acces is controlled via flask_login, controlling access to some routes and checking if user is authorized.
 - All passwords are stored inside Mongo using encryption
-- Frontend/UI using simple Html code and Bootstrap 4
+- Frontend/UI using simple Html code, Bootstrap 4 and Jinja templates
 
 
 
