@@ -20,7 +20,7 @@ Desafio Boticario
 - 2: Activate venv (Ex: pyenv activate boticario)
 - 3: Install requirements: pip install -r requirements.txt
 - 4: Run main.py (Tested using Pycharm) or run from terminal adding project root to PYTHONPATH (ex: export PYTHONPATH="${PYTHONPATH}:/Users/tiago/PycharmProjects/BoticarioChallange")
-and the: python src/main.py -> Working dir should be Project root (Ex: /Users/tiago/PycharmProjects/BoticarioChallange)
+and then: python src/main.py -> Working dir should be Project root (Ex: /Users/tiago/PycharmProjects/BoticarioChallange)
 
 # Routes:
 - Check src/routes
