@@ -1,5 +1,6 @@
 # BoticarioChallange
 Desafio Boticario
+Images => Check all images from this project (/img folder)
 
 # How it works:
 - It is a project, using Python as backend, Flask as web-service and Mongo as database.
@@ -28,6 +29,7 @@ Desafio Boticario
 - 3: Install requirements: pip install -r requirements.txt
 - 4: Run main.py (Tested using Pycharm) or run from terminal adding project root to PYTHONPATH (ex: export PYTHONPATH="${PYTHONPATH}:/Users/tiago/PycharmProjects/BoticarioChallange")
 and then: python src/main.py -> Working dir should be Project root (Ex: /Users/tiago/PycharmProjects/BoticarioChallange)
+- 5: Open browser, and access: http://localhost:8000
 
 
 # External API
