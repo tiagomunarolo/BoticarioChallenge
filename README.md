@@ -8,8 +8,6 @@ Desafio Boticario
 - All passwords are stored inside Mongo using encryption
 - Frontend/UI using simple Html code, Bootstrap 4 and Jinja templates
 
-
-
 # Requisites:
 - Python 3.6+
 - MongoDb installed locally and running ("mongod in terminal")
@@ -21,6 +19,11 @@ Desafio Boticario
 - 3: Install requirements: pip install -r requirements.txt
 - 4: Run main.py (Tested using Pycharm) or run from terminal adding project root to PYTHONPATH (ex: export PYTHONPATH="${PYTHONPATH}:/Users/tiago/PycharmProjects/BoticarioChallange")
 and then: python src/main.py -> Working dir should be Project root (Ex: /Users/tiago/PycharmProjects/BoticarioChallange)
+
+
+# External API
+- Check src/api. Used HTTPS requests (GET) and provided Token to pass a "CPF" and then retrieve a generic number representing cashback value.
+It is assumed that CPF is the same as the registered during Signup. Some logs were implemented to show app status.
 
 # Routes:
 - Check src/routes
