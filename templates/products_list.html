@@ -1,7 +1,7 @@
 {% extends 'base.html'%}
 {% block cashback %}
 <li class="nav-item active">
-    <a class="nav-link" href="/products?register=True">Register new order</a>
+    <a class="nav-link" href="/products?register=True">Register new purchase</a>
 </li>
 <li class="nav-item active">
     <a class="nav-link" href="/cashback">My Cashback <span class="sr-only">(current)</span></a>
@@ -45,7 +45,17 @@
     </tbody>
 </table>
 {%else%}
-<h1>No product registered</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center">No purchase registered! Please register a new one :)</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endif %}
 
 

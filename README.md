@@ -1,12 +1,21 @@
 # BoticarioChallange
 Desafio Boticario
 
-
 # How it works:
 - It is a project, using Python as backend, Flask as web-service and Mongo as database.
 - User acces is controlled via flask_login, controlling access to some routes and checking if user is authorized.
 - All passwords are stored inside Mongo using encryption
 - Frontend/UI using simple Html code, Bootstrap 4 and Jinja templates
+
+# Actions:
+- User can create a new account (if email is not registered yet)
+- User can sign-in
+- User can logout
+- User can see all their purchases
+- User can register a new purchase
+- Authentication is checked in every endpoint (restricted access)
+- Cashback is computed based on all purchases of current user and according to current month (bonification criteria)
+- User can see total cashback (returned from API)
 
 # Requisites:
 - Python 3.6+
