@@ -1,0 +1,62 @@
+{% extends 'base.html'%}
+
+{% block cashback %}
+<li class="nav-item">
+    <a class="nav-link active" href="/products">My Orders</a>
+</li>
+<li class="nav-item active">
+    <a class="nav-link" href="/cashback">My Cashback <span class="sr-only">(current)</span></a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="/logout">Logout</a>
+</li>
+{% endblock %}
+
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Register new purchase</h5>
+                    <div class="signup-form">
+                        <form action="/products" method="post">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="code" placeholder="Code number"
+                                       required="required">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="value" placeholder="Value: R$ 00.00"
+                                       required="required">
+                            </div>
+                            <div>
+                                <input type="date" id="date" name="date" class="form-control"
+                                       placeholder="01/01/2020"
+                                       required autofocus/>
+                            </div>
+                            </br>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="cpf"
+                                       placeholder="CPF: XXX.XXX.XXX-XX"
+                                       required="required">
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success btn-lg btn-block" name="submit"
+                                        value="True">Register
+                                    Now
+                                </button>
+                            </div>
+                        </form>
+                        <div class="text-center">See all purchases?<a href="/products"> Click here</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

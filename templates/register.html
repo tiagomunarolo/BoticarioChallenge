@@ -1,0 +1,71 @@
+{% extends 'base.html'%}
+{% block login %}
+<a href="/home">
+    <button class="btn btn-success navbar-btn">Login</button>
+</a>
+{% endblock %}
+
+{% block body %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Register</h5>
+                    <div class="signup-form">
+                        <form action="/register" method="post">
+                            <p class="hint-text">Create your account Here =)</p>
+                            {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                            <center>
+                                <h15 class="card-title text-center">
+                                    {% for message in messages %}
+                                    {{ message }}
+                                    {% endfor %}
+                                </h15>
+                            </center>
+                            <br>
+                            {% endif %}
+                            {% endwith %}
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="full_name" placeholder="Full name"
+                                       required="required">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="cpf" placeholder="CPF: XXX.XXX.XXX-XX"
+                                       required="required">
+                            </div>
+                            <input type="email" id="email" name="email" class="form-control"
+                                   placeholder="Email address"
+                                   required autofocus>
+                            <br>
+                            <div class="form-group">
+                                <input type="password" class="form-control" name="password" placeholder="Password"
+                                       required="required">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" name="confirm_password"
+                                       placeholder="Confirm Password"
+                                       required="required">
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success btn-lg btn-block" name="submit"
+                                        value="True">Register
+                                    Now
+                                </button>
+                            </div>
+                        </form>
+                        <div class="text-center">Already have an account? <a href="/home">Sign
+                            in</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

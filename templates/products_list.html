@@ -1,0 +1,52 @@
+{% extends 'base.html'%}
+{% block cashback %}
+<li class="nav-item active">
+    <a class="nav-link" href="/products?register=True">Register new order</a>
+</li>
+<li class="nav-item active">
+    <a class="nav-link" href="/cashback">My Cashback <span class="sr-only">(current)</span></a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="/logout">Logout</a>
+</li>
+{% endblock %}
+
+{% block body %}
+
+
+{% if products %}
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Code</th>
+        <th scope="col">Value</th>
+        <th scope="col">Date</th>
+        <th scope="col">Cashback %</th>
+        <th scope="col">Cashback Value</th>
+        <th scope="col">Status</th>
+
+    </tr>
+    </thead>
+    <tbody>
+
+    {% for product in products %}
+    <tr>
+        <th scope="row">{{loop.index0+1}}</th>
+        <td>{{product.code}}</td>
+        <td>R$ {{product.value}}</td>
+        <td>{{product.date}}</td>
+        <td>{{product.cashback|float * 100}}</td>
+        <td>{{product.cashback|float * product.value|float}}</td>
+        <td>{{product.status}}</td>
+
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{%else%}
+<h1>No product registered</h1>
+{% endif %}
+
+
+{% endblock %}
