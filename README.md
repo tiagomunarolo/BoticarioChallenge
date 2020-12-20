@@ -37,4 +37,21 @@ and then: python src/main.py -> Working dir should be Project root (Ex: /Users/t
 It is assumed that CPF is the same as the registered during Signup. Some logs were implemented to show app status.
 
 # Routes:
+    @app.route('/home', methods=['POST', 'GET']) -> Home page
+    @app.route('/register', methods=['POST', 'GET']) -> Registration page (create new user)
+    @app.route('/', methods=['GET', 'POST']) -> Index page (render registration form and then redirects baased on user action)
+    @app.route('/order') ->  Purchase registration form
+    @app.route("/logout", methods=["GET"]) -> User logout and redirects to Home
+    @app.route('/products', methods=['POST']) -> Register a new product inside database
+    @app.route('/products', methods=['GET']) -> Get all products based on current user
+    @app.route('/cashback', methods=['GET']) -> Get Cashback using CPF (API call)
+
+
+
+
+
+
+
+
+    
 - Check src/routes
