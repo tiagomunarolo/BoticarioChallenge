@@ -33,6 +33,12 @@ def configure_user_routes(app, login_manager):
                 flash('Please, fill all required fields!')
                 return render_template('register.html')
 
+            cpf = request.form.get('cpf', None)
+            cpf = cpf.replace('.', '').replace('-', '') if cpf else None
+            if cpf and not cpf.isdigit():
+                flash('CPF should be just numbers! Please, try again...')
+                return render_template('register.html')
+
             if confirm_psw != user_psw:
                 flash('Password does not match! Please, try again...')
                 return render_template('register.html')
@@ -42,8 +48,8 @@ def configure_user_routes(app, login_manager):
                 app.logger.info('Account created')
                 flash(' Account Created Successfully!')
             else:
-                app.logger.info('This e-mail is in use. Please, register with a new one!')
-                flash('This e-mail is in use. Please, register with a new one!')
+                app.logger.info('This email and/or cpf is in use. Please, register with a new one!')
+                flash('This email and/or cpf is in use. Please, register with a new one!')
             return render_template('home.html')
 
         return render_template('register.html')

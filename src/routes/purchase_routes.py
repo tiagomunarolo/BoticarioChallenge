@@ -1,4 +1,4 @@
-from flask import request, render_template, redirect, url_for
+from flask import request, render_template, redirect, url_for, flash
 from flask_login import login_required
 from src.api.cashback_api import get_cashback
 from src.db.user_model import User
@@ -14,6 +14,14 @@ def products_routes(app):
             value = request.form.get('value', None)
             date = request.form.get('date', None)
             cpf = request.form.get('cpf', None)
+
+            cpf = cpf.replace('.', '').replace('-', '') if cpf else None
+            value_check = value.replace('.', '').replace('-', '') if value else None
+
+            if (cpf and not cpf.isdigit()) or (value_check and not value_check.isdigit()):
+                app.logger.info('CPF/Value is invalid')
+                flash('CPF/Value fields should be just numbers! Please, try again...')
+                return render_template('order.html')
 
             product = Product(code=code, value=value, date=date, cpf=cpf)
             product_id = product.insert_product()

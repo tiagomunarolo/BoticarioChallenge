@@ -58,7 +58,8 @@ class User(UserMixin):
     def register_user(self):
         self.password = self._generate_password_hash(self.password)
         data = {'email': self.email, 'password': self.password, 'cpf': self.cpf, 'full_name': self.full_name}
-        user_found = MongoClient().find_document(collection=USERS_COLLECTION, query={'email': self.email})
+        user_found = MongoClient().find_document(collection=USERS_COLLECTION,
+                                                 query={'$or': [{'email': self.email}, {'cpf': self.cpf}]})
         if not bool(user_found):
             user_id = MongoClient().insert_new_document(collection=USERS_COLLECTION, data=data)
             self._id = user_id if user_id else self._id

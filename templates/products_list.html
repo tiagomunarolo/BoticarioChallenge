@@ -36,8 +36,8 @@
         <td>{{product.code}}</td>
         <td>R$ {{product.value}}</td>
         <td>{{product.date}}</td>
-        <td>{{product.cashback|float * 100}}</td>
-        <td>{{product.cashback|float * product.value|float}}</td>
+        <td>{{product.cashback|float * 100}} %</td>
+        <td>R$ {{product.cashback|float * product.value|float}}</td>
         <td>{{product.status}}</td>
 
     </tr>

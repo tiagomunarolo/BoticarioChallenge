@@ -21,6 +21,18 @@
             <div class="card card-signin my-5">
                 <div class="card-body">
                     <h5 class="card-title text-center">Register new purchase</h5>
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                    <center>
+                        <h15 class="card-title text-center">
+                            {% for message in messages %}
+                            {{ message }}
+                            {% endfor %}
+                        </h15>
+                    </center>
+                    <br>
+                    {% endif %}
+                    {% endwith %}
                     <div class="signup-form">
                         <form action="/products" method="post">
                             <div class="form-group">
