@@ -1,4 +1,4 @@
-# BoticarioChallange
+# BoticarioChallenge
 Desafio Boticario
 Images => Check all images from this project (/img folder)
 
