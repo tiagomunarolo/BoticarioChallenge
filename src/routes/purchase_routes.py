@@ -18,9 +18,9 @@ def products_routes(app):
             cpf = cpf.replace('.', '').replace('-', '') if cpf else None
             value_check = value.replace('.', '').replace('-', '') if value else None
 
-            if (cpf and not cpf.isdigit()) or (value_check and not value_check.isdigit()):
+            if (cpf and not cpf.isdigit()) or (value_check and not value_check.isdigit()) or float(value) < 0:
                 app.logger.info('CPF/Value is invalid')
-                flash('CPF/Value fields should be just numbers! Please, try again...')
+                flash('CPF/Product Value fields should be numbers! Please, try again...')
                 return render_template('order.html')
 
             product = Product(code=code, value=value, date=date, cpf=cpf)

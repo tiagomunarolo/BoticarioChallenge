@@ -30,13 +30,13 @@ class Product(object):
             return False
         return True
 
-    def find_cashback_for_current_user(self):
+    def find_cashback_for_current_user(self, value=0):
         user_id = User.get_current_user()
         input_data = {}
         if user_id:
             input_data = {'user_id': user_id}
         results = MongoClient().find_elements(collection=PRODUCTS_COLLECTION, query=input_data)
-        sum_value = 0
+        sum_value = float(value) if value else 0
 
         year, month = get_current_year_and_month()
 
@@ -54,7 +54,7 @@ class Product(object):
 
     def insert_product(self):
         user_id = User.get_current_user()
-        self.find_cashback_for_current_user()
+        self.find_cashback_for_current_user(value=self.value)
         input_data = {
             'code': self.code, 'value': self.value,
             'date': self.date, 'cpf': self.cpf,
